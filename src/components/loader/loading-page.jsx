@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Orbitals } from 'react-spinners-css';
+import { Orbitals } from "react-spinners-css";
 
 const gradient =
   "radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%)";
@@ -16,7 +16,5 @@ export const Loading = () => {
     };
   }, [loadingValue]);
 
-  return (
-    <Orbitals color={gradient} size={400}/>
-  );
+  return <Orbitals color={gradient} size={900} />;
 };
