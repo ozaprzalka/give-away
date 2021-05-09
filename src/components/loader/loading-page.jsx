@@ -1,20 +1,23 @@
-import React, { useEffect, useState } from "react";
-import { Orbitals } from "react-spinners-css";
+import React from "react";
+import { Container, makeStyles } from "@material-ui/core";
+import { DualRing } from "react-spinners-css";
 
-const gradient =
-  "radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%)";
+const useStyles = makeStyles(() => ({
+  container: {
+    minWidth: "100vw",
+    minHeight: "100vh",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+}));
 
 export const Loading = () => {
-  const [loadingValue, setLoadingValue] = useState(0);
+  const { container } = useStyles();
 
-  useEffect(() => {
-    const timer = setInterval(() => {
-      if (loadingValue < 100) setLoadingValue(loadingValue + 0.02);
-    });
-    return () => {
-      clearTimeout(timer);
-    };
-  }, [loadingValue]);
-
-  return <Orbitals color={gradient} size={900} />;
+  return (
+    <Container className={container}>
+      <DualRing color="#bde0fe" size={400} />
+    </Container>
+  );
 };
