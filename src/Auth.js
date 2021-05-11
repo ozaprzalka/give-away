@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useContext } from "react";
 import app from "./base.js";
-import { Loading } from "./components/loader/loading-page";
+import { Loading } from "./components/loader/Loading-page";
 
 export const AuthContext = React.createContext();
 

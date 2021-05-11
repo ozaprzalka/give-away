@@ -1,16 +1,7 @@
 import React from "react";
-import { Container, makeStyles } from "@material-ui/core";
+import { Container } from "@material-ui/core";
 import { DualRing } from "react-spinners-css";
-
-const useStyles = makeStyles(() => ({
-  container: {
-    minWidth: "100vw",
-    minHeight: "100vh",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-  },
-}));
+import { useStyles } from "./loading-styles";
 
 export const Loading = () => {
   const { container } = useStyles();

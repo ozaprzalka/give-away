@@ -1,8 +1,8 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
-import { NavComponent } from "./components/home/nav-component";
-import { HeroComponent } from "./components/home/hero";
-import { LoginComponent } from "./components/login/login-component";
+import { NavComponent } from "./components/home/Nav-component";
+import { HeroComponent } from "./components/home/Hero";
+import { LoginComponent } from "./components/login/Login-component";
 import PrivateRoute from "./PrivateRoute";
 import { Reset } from "styled-reset";
 import { AuthProvider } from "./Auth";

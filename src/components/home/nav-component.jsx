@@ -5,25 +5,8 @@ import {
   AppBar,
   Toolbar,
   MenuItem,
-  makeStyles,
 } from "@material-ui/core";
-
-const useStyles = makeStyles(() => ({
-  header: {
-    backgroundColor: "#ffffff",
-    fontWeight: 600,
-    color: "#000000",
-    textAlign: "right",
-    maxWidth: "40%",
-    boxShadow: "none",
-  },
-  container: {
-    minWidth: "100vw",
-    margin: "10px 20px",
-    display: "flex",
-    justifyContent: "flex-end",
-  },
-}));
+import { useStyles } from "./home-style";
 
 export const NavComponent = () => {
   const { header, container } = useStyles();
@@ -32,16 +15,16 @@ export const NavComponent = () => {
     <>
       <Container className={container}>
         <AppBar position="static" className={header}>
-          <Toolbar>
+          <Toolbar style={{ alignSelf: "flex-end" }}>
+            <MenuItem component={Link} to="/login">
+              Zaloguj
+            </MenuItem>
             <MenuItem
               style={{ border: "1px solid yellow" }}
               component={Link}
               to="/register"
             >
               Zaloz konto
-            </MenuItem>
-            <MenuItem component={Link} to="/login">
-              Zaloguj
             </MenuItem>
           </Toolbar>
           <Toolbar>
