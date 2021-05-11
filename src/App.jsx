@@ -3,6 +3,8 @@ import { Route, Switch } from "react-router-dom";
 import { NavComponent } from "./components/home/Nav-component";
 import { HeroComponent } from "./components/home/Hero-component";
 import { LoginComponent } from "./components/login/Login-component";
+import { RegisterComponent } from "./components/register/Register-component";
+
 import PrivateRoute from "./PrivateRoute";
 import { Reset } from "styled-reset";
 import { AuthProvider } from "./Auth";
@@ -16,7 +18,7 @@ function App() {
         <Switch>
           <Route component={HeroComponent} exact path="/"></Route>
           <Route component={LoginComponent} path="/login"></Route>
-          <Route path="/register"></Route>
+          <Route component={RegisterComponent} path="/register"></Route>
           <Route path="/idea"></Route>
           <Route path="/about"></Route>
           <Route path="/organizations"></Route>
