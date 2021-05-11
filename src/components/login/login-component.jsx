@@ -5,7 +5,7 @@ import {
   Button,
   TextField,
 } from "@material-ui/core";
-import {DecorationComponent} from "./../decoration/decoration-component"
+import {DecorationComponent} from "../decoration/Decoration-component"
 import { useStyles, formStyle } from "./login-styles";
 
 export const LoginComponent = () => {

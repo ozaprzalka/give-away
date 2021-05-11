@@ -1,7 +1,7 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
 import { NavComponent } from "./components/home/Nav-component";
-import { HeroComponent } from "./components/home/Hero";
+import { HeroComponent } from "./components/home/Hero-component";
 import { LoginComponent } from "./components/login/Login-component";
 import PrivateRoute from "./PrivateRoute";
 import { Reset } from "styled-reset";
