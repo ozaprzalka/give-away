@@ -27,7 +27,7 @@ export const NavComponent = () => {
               Zaloz konto
             </MenuItem>
           </Toolbar>
-          <Toolbar>
+          <Toolbar style={{ alignSelf: "flex-end" }}>
             <MenuItem component={Link} to="/">
               Start
             </MenuItem>
