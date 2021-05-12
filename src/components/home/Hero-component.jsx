@@ -3,6 +3,7 @@ import { Container, Box, Button } from "@material-ui/core";
 
 import { useStyles } from "./hero-styles";
 import {DecorationComponent} from "../decoration/Decoration-component"
+import { ColumnsComponent} from "./Columns-component"
 
 export const HeroComponent = () => {
   const { container, image, start, butttons } = useStyles();
@@ -23,6 +24,7 @@ export const HeroComponent = () => {
           </Box>
         </Box>
       </Container>
+      <ColumnsComponent></ColumnsComponent>
     </>
   );
 };
