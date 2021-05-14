@@ -7,9 +7,18 @@ import {
   MenuItem,
 } from "@material-ui/core";
 import { useStyles } from "./home-style";
+import { Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
 
 export const NavComponent = () => {
   const { header, container } = useStyles();
+  
+  const scrollTo = () => {
+    scroller.scrollTo('steps', {
+      duration: 800,
+      delay: 0,
+      smooth: 'easeInOutQuart'
+    })
+  }
 
   return (
     <>
@@ -31,7 +40,7 @@ export const NavComponent = () => {
             <MenuItem component={Link} to="/">
               Start
             </MenuItem>
-            <MenuItem component={Link} to="/ideas">
+            <MenuItem component={Link} onClick={scrollTo}>
               O co chodzi?
             </MenuItem>
             <MenuItem component={Link} to="/about">

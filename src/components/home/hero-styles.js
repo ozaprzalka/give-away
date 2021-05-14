@@ -4,7 +4,7 @@ import asset1 from "./Home-Hero-Image.jpg";
 export const useStyles = makeStyles(() => ({
   container: {
     minWidth: "100vw",
-    margin: "10px 0",
+    marginTop: "10px",
     display: "flex",
     justifyContent: "flex-end",
   },
