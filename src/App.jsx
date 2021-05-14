@@ -20,7 +20,6 @@ function App() {
           <Route component={LoginComponent} path="/login"></Route>
           <Route component={RegisterComponent} path="/register"></Route>
           <Route path="/idea"></Route>
-          <Route path="/about"></Route>
           <Route path="/organizations"></Route>
           <Route path="/contact"></Route>
           <PrivateRoute path="/fund" exact />

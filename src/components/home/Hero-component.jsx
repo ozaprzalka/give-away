@@ -4,6 +4,9 @@ import { Container, Box, Button } from "@material-ui/core";
 import { useStyles } from "./hero-styles";
 import {DecorationComponent} from "../decoration/Decoration-component"
 import { ColumnsComponent} from "./Columns-component"
+import { StepsComponent} from "./Steps-component"
+
+
 
 export const HeroComponent = () => {
   const { container, image, start, butttons } = useStyles();
@@ -25,6 +28,7 @@ export const HeroComponent = () => {
         </Box>
       </Container>
       <ColumnsComponent></ColumnsComponent>
+      <StepsComponent></StepsComponent>
     </>
   );
 };
