@@ -2,11 +2,10 @@ import React from "react";
 import { Container, Box, Button } from "@material-ui/core";
 
 import { useStyles } from "./hero-styles";
-import {DecorationComponent} from "../decoration/Decoration-component"
-import { ColumnsComponent} from "./Columns-component"
-import { StepsComponent} from "./Steps-component"
-
-
+import { DecorationComponent } from "../decoration/Decoration-component";
+import { ColumnsComponent } from "./Columns-component";
+import { StepsComponent } from "./Steps-component";
+import { AboutComponent } from "./About-component";
 
 export const HeroComponent = () => {
   const { container, image, start, butttons } = useStyles();
@@ -16,7 +15,10 @@ export const HeroComponent = () => {
       <Container className={container}>
         <Box className={image}></Box>
         <Box className={start}>
-          <DecorationComponent text="Zacznij pomagac!" text2="Oddaj niechciane rzeczy w zaufane rece"></DecorationComponent>
+          <DecorationComponent
+            text="Zacznij pomagac!"
+            text2="Oddaj niechciane rzeczy w zaufane rece"
+          ></DecorationComponent>
           <Box>
             <Button href="/giveaway" className={butttons}>
               Oddaj rzeczy
@@ -29,6 +31,7 @@ export const HeroComponent = () => {
       </Container>
       <ColumnsComponent></ColumnsComponent>
       <StepsComponent></StepsComponent>
+      <AboutComponent></AboutComponent>
     </>
   );
 };

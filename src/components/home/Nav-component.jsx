@@ -1,24 +1,32 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import {
-  Container,
-  AppBar,
-  Toolbar,
-  MenuItem,
-} from "@material-ui/core";
+import { Container, AppBar, Toolbar, MenuItem } from "@material-ui/core";
 import { useStyles } from "./home-style";
-import { Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
+import {
+  Element,
+  Events,
+  animateScroll as scroll,
+  scrollSpy,
+  scroller,
+} from "react-scroll";
 
 export const NavComponent = () => {
   const { header, container } = useStyles();
-  
-  const scrollTo = () => {
-    scroller.scrollTo('steps', {
+
+  const scrollToSteps = () => {
+    scroller.scrollTo("steps", {
       duration: 800,
       delay: 0,
-      smooth: 'easeInOutQuart'
-    })
-  }
+      smooth: "easeInOutQuart",
+    });
+  };
+  const scrollToAbout = () => {
+    scroller.scrollTo("about", {
+      duration: 800,
+      delay: 0,
+      smooth: "easeInOutQuart",
+    });
+  };
 
   return (
     <>
@@ -40,10 +48,10 @@ export const NavComponent = () => {
             <MenuItem component={Link} to="/">
               Start
             </MenuItem>
-            <MenuItem component={Link} onClick={scrollTo}>
+            <MenuItem component={Link} onClick={scrollToSteps}>
               O co chodzi?
             </MenuItem>
-            <MenuItem component={Link} to="/about">
+            <MenuItem component={Link} onClick={scrollToAbout}>
               O nas
             </MenuItem>
             <MenuItem component={Link} to="/organizations">
