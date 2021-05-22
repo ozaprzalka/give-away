@@ -27,6 +27,13 @@ export const NavComponent = () => {
       smooth: "easeInOutQuart",
     });
   };
+  const scrollToHelp = () => {
+    scroller.scrollTo("help", {
+      duration: 800,
+      delay: 0,
+      smooth: "easeInOutQuart",
+    });
+  };
 
   return (
     <>
@@ -48,13 +55,13 @@ export const NavComponent = () => {
             <MenuItem component={Link} to="/">
               Start
             </MenuItem>
-            <MenuItem component={Link} onClick={scrollToSteps}>
+            <MenuItem onClick={scrollToSteps}>
               O co chodzi?
             </MenuItem>
-            <MenuItem component={Link} onClick={scrollToAbout}>
+            <MenuItem onClick={scrollToAbout}>
               O nas
             </MenuItem>
-            <MenuItem component={Link} to="/organizations">
+            <MenuItem onClick={scrollToHelp}>
               Fundacja i organizacje
             </MenuItem>
             <MenuItem component={Link} to="/contact">
