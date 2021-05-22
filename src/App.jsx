@@ -3,6 +3,8 @@ import { Route, Switch } from "react-router-dom";
 import { NavComponent } from "./components/home/Nav-component";
 import { HeroComponent } from "./components/home/Hero-component";
 import { LoginComponent } from "./components/login/Login-component";
+import { LogoutComponent } from "./components/login/Logout-component";
+
 import { RegisterComponent } from "./components/register/Register-component";
 
 import PrivateRoute from "./PrivateRoute";
@@ -18,6 +20,7 @@ function App() {
         <Switch>
           <Route component={HeroComponent} exact path="/"></Route>
           <Route component={LoginComponent} path="/login"></Route>
+          <Route component={LogoutComponent} path="/logout"></Route>
           <Route component={RegisterComponent} path="/register"></Route>
           <Route path="/idea"></Route>
           <Route path="/organizations"></Route>

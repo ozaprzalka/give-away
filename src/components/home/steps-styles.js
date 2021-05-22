@@ -24,12 +24,12 @@ export const useStyles = makeStyles(() => ({
     flexDirection: "column",
   },
   wrap: {
-    width: "50%",
+    width: "60%",
     marginBottom: "30px",
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    fontSize: "32px",
+    fontSize: "50px",
     flexDirection: "column",
   },
   start2: {

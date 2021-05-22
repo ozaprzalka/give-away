@@ -21,7 +21,7 @@ export const useStyles = makeStyles(() => ({
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    fontSize: "32px",
+    fontSize: "40px",
     flexDirection: "column",
   },
   butttons: {

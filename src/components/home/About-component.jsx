@@ -9,7 +9,7 @@ export const AboutComponent = () => {
 
   return (
     <>
-      <Container className={container} name="about">
+      <Container className={container} name="about" disableGutters={true}>
         <Box className={start}>
           <DecorationComponent text="O nas!"></DecorationComponent>
           <Typography className={text} gutterBottom>
