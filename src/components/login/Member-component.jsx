@@ -8,12 +8,12 @@ import app from "../../base";
 export const MemberComponent = () => {
   const { container, start, butttons } = useStyles();
 
-  const handleLogout = useCallback(async() => {
-      try {
-          app.auth().signOut();
-      } catch (err) {
-          console.log(err)
-      }
+  const handleLogout = useCallback(async () => {
+    try {
+      app.auth().signOut();
+    } catch (err) {
+      console.log(err);
+    }
   }, []);
 
   return (
@@ -23,8 +23,8 @@ export const MemberComponent = () => {
           <DecorationComponent text="Witaj!"></DecorationComponent>
           <Box>
             <Button
-            onClick={handleLogout}
-            href="/logout"
+              onClick={handleLogout}
+              href="/logout"
               className={butttons}
               style={{ border: "1px solid #3C3C3C" }}
             >

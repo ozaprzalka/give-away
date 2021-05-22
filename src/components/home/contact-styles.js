@@ -24,7 +24,8 @@ export const useStyles = makeStyles(() => ({
     alignItems: "center",
     fontSize: "50px",
     margin: "40px",
-    flexDirection: "column"
+    flexDirection: "column",
+    backgroundColor: "rgba(255,255, 255, 0.7)"
   },
   input: {
     maxWidth: "40%",
