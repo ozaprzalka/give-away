@@ -4,7 +4,7 @@ import { NavComponent } from "./components/home/Nav-component";
 import { HeroComponent } from "./components/home/Hero-component";
 import { LoginComponent } from "./components/login/Login-component";
 import { LogoutComponent } from "./components/login/Logout-component";
-
+import { MemberComponent } from "./components/login/Member-component";
 import { RegisterComponent } from "./components/register/Register-component";
 
 import PrivateRoute from "./PrivateRoute";
@@ -22,9 +22,7 @@ function App() {
           <Route component={LoginComponent} path="/login"></Route>
           <Route component={LogoutComponent} path="/logout"></Route>
           <Route component={RegisterComponent} path="/register"></Route>
-          <Route path="/idea"></Route>
-          <Route path="/organizations"></Route>
-          <Route path="/contact"></Route>
+          <PrivateRoute path="/home" component={MemberComponent} exact />
           <PrivateRoute path="/fund" exact />
           <PrivateRoute path="/giveaway" exact />
           {/* <Route path="*" component={NotFound} /> */}

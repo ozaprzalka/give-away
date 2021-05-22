@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 import { Container, Box, Button, TextField } from "@material-ui/core";
 import { DecorationComponent } from "../decoration/Decoration-component";
 import { useStyles, formStyle } from "./login-styles";
-
-const form = document.querySelector("#form");
+import app from "../../base";
+import {useHistory} from "react-router";
+import { Redirect } from "react-router";
 
 export const LoginComponent = () => {
   const { container, start, butttons, input, box } = useStyles();
@@ -23,6 +24,23 @@ export const LoginComponent = () => {
       [name]: value
   }));
   };
+  const history = useHistory();
+
+  const handleLogin = useCallback(
+    async (e) => {
+      e.preventDefault();
+      app
+        .auth()
+        .signInWithEmailAndPassword(value.email, value.password)
+        .then(() => {
+          console.log(value.email)
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    },
+    []
+  );
 
 
   const validate = () => {
@@ -43,6 +61,7 @@ export const LoginComponent = () => {
     }));
     }
   }
+
   return (
     <>
       <Container className={container}>
@@ -64,6 +83,7 @@ export const LoginComponent = () => {
               id="password"
               label="Haslo"
               name="password"
+              type="password"
               value={value.password}
             />
           </form>

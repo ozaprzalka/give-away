@@ -3,12 +3,14 @@ import { Container, Box, Button, TextField } from "@material-ui/core";
 import { DecorationComponent } from "../decoration/Decoration-component";
 import { useStyles, formStyle } from "../login/login-styles";
 import { registerFormStyle } from "./register-styles";
+import { useHistory } from "react-router";
 
 import app from "../../base";
 import { database } from "../../base";
 
 export const RegisterComponent = () => {
   const { container, start, butttons, input, box } = useStyles();
+  const history = useHistory();
   const [value, setValue] = useState({
     email: "",
     password: "",
@@ -55,16 +57,15 @@ export const RegisterComponent = () => {
     .auth()
     .createUserWithEmailAndPassword(value.email, value.password)
     .then(() => {
-      // let loggedIn = app.auth().currentUser;
-      // console.log("then", loggedIn.uid);
+      history.push("/home");
+      let loggedIn = app.auth().currentUser;
       let user = {
         email: value.email,
         password: value.password,
-        // uid: loggedIn.uid,
-        // created: loggedIn.metadata.lastSignInTime,
+        uid: loggedIn.uid,
+        created: loggedIn.metadata.lastSignInTime,
       };
       database.collection("users").doc(user.uid).set(user);
-      console.log("then", user)
     })
     .catch((error) => {
       setError(error.message);
@@ -93,6 +94,7 @@ export const RegisterComponent = () => {
               id="password"
               label="Haslo"
               name="password"
+              type="password"
               value={value.password}
             />
             <TextField
@@ -100,6 +102,7 @@ export const RegisterComponent = () => {
               id="confirmPassword"
               label="Powtorz Haslo"
               name="confirmPassword"
+              type="password"
               value={value.confirmPassword}
             />
           </form>
